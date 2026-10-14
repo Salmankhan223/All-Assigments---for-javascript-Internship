@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 2</title>
+</head>
+
+<body>
+    <h2>Assignment 2: Bill and Tip Calculator</h2>
+    <p>Enter values in the prompts. Open F12 → Console to see the result.</p>
+    <script>
+        const billInput = prompt("Enter bill amount:", "100");
+        const tipInput = prompt("Enter tip percentage:", "15");
+
+        const bill = Number(billInput);
+        const tipPercentage = Number(tipInput);
+
+        if (billInput === null || tipInput === null ||
+            billInput.trim() === "" || tipInput.trim() === "" ||
+            !Number.isFinite(bill) || !Number.isFinite(tipPercentage) ||
+            bill < 0 || tipPercentage < 0) {
+            console.log("Invalid input. Please enter non-negative numbers.");
+        } else {
+            const calculatedTip = bill * tipPercentage / 100;
+            const total = bill + calculatedTip;
+
+            console.log(`Subtotal: $${bill}`);
+            console.log(`Tip Percentage: ${tipPercentage}%`);
+            console.log(`Calculated Tip: $${calculatedTip}`);
+            console.log(`Total Amount to Pay: $${total}`);
+        }
+    </script>
+</body>
+
+</html>
